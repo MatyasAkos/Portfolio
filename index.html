@@ -7,57 +7,58 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="navbar bg-base-100 sticky">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+    <header>
+      <div class="navbar bg-base-100 sticky">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              </div>
+              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li>
+                  <a>Feladatok</a>
+                  <ul class="p-2">
+                    <li><a href="binary.html">Kettes Számrendszer</a></li>
+                    <li><a href="word.html">Word</a></li>
+                    <li><a href="karesz.html">Karesz</a></li>
+                    <li><a href="3000.html">3000+ Feladatok</a></li>
+                    <li><a href="web.html">Web</a></li>
+                  </ul>
+                </li>
+              </ul>
             </div>
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
               <li>
-                <a>Feladatok</a>
-                <ul class="p-2">
-                  <li><a href="binary.html">Kettes Számrendszer</a></li>
-                  <li><a href="word.html">Word</a></li>
-                  <li><a href="karesz.html">Karesz</a></li>
-                  <li><a href="3000.html">3000+ Feladatok</a></li>
-                  <li><a href="web.html">Web</a></li>
-                </ul>
+                <details>
+                  <summary>Feladatok</summary>
+                  <ul class="p-2">
+                    <li><a href="binary.html">Kettes Számrendszer</a></li>
+                    <li><a href="word.html">Word</a></li>
+                    <li><a href="karesz.html">Karesz</a></li>
+                    <li><a href="3000.html">3000+ Feladatok</a></li>
+                    <li><a href="web.html">Web</a></li>
+                  </ul>
+                </details>
               </li>
             </ul>
           </div>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li>
-              <details>
-                <summary>Feladatok</summary>
-                <ul class="p-2">
-                  <li><a href="binary.html">Kettes Számrendszer</a></li>
-                  <li><a href="word.html">Word</a></li>
-                  <li><a href="karesz.html">Karesz</a></li>
-                  <li><a href="3000.html">3000+ Feladatok</a></li>
-                  <li><a href="web.html">Web</a></li>
-                </ul>
-              </details>
-            </li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <a class="btn">Button</a>
-        </div>
-    </div>
-    <header>
-        <h1>Köszöntjük a főoldalon!</h1>
+      </div>
     </header>
-    <p>
+    <main>
+      <h1>Köszöntjük a főoldalon!</h1>
+      <article>
         A nevem Máyás Ákos <br>
         Github felhasználónevem MatyasAkos <br>
         Az évben rengeteg dolgot tanultam
-    </p>
+      </article>
+    </main>
+    <footer>
+        <p>Email: <a href="mailto:matyas.akos.23f@szlgbp.hu">matyas.akos.23f@szlgbp.hu</a></p>
+    </footer>
 </body>
 </html>
