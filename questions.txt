@@ -1,3 +1,4 @@
 Az "Utazónapló" elfogadható-e aloldalnak?
 Gond-e az ha ez nincsen a navbarhoz hozzáadva?
 Ha egy CSS attribútumot csak egy taghez használok (pl van több iframe, de csak egyiket szeretném invertálni), akkor muszály-e CSS file-t használni a style attribútum helyett?
+A fontok is beletartoznak-e a "30 CSS Parancs" feltételbe?
