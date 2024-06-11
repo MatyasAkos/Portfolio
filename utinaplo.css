@@ -5,9 +5,9 @@ h2, h3{
 }
 
 img, figcaption{
-    position: absolute  ;
+    position: absolute;
     display: inline;
-    padding-left: 30em
+    padding-left: 300em
 }
 
 figcaption{
