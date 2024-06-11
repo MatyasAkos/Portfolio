@@ -7,7 +7,6 @@ figure{
 }
 
 figcaption{
-    padding-top: 12em;
     color: rgb(100, 100, 100);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -34,5 +33,9 @@ p{
 }
 
 article{
-    padding-right: 70%;
+    padding-right: 55%;
+}
+
+div p{
+    padding-right: 30%;
 }
