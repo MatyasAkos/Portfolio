@@ -34,7 +34,7 @@ show.addEventListener('click', ShowHide)
 function ShowHide(){
     code.hidden = !hide;
     if(!hide){
-        show.textContent = 'Kód mutatása';
+        show.textContent = 'Kód megjelenítése';
     }
     else{
         show.textContent = 'Kód elrejtése';
