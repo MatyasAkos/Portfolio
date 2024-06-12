@@ -4,6 +4,9 @@ const mozaik = document.querySelector('button#mozaik')
 const fa = document.querySelector('button#fa')
 const haz = document.querySelector('button#haz')
 const labirintus = document.querySelector('button#labirintus')
+let code = document.querySelector(`code#mozaik`)
+const show = document.querySelector('button#show')
+let hide = true;
 
 const prompts = {
     'mozaik' : 'Karesz rajzolja meg <a href="https://molnatt.github.io/logo_mozaik_korongok.png" target="_blank">ezt</a> az ábrát.',
@@ -18,6 +21,23 @@ haz.addEventListener('click', () => OnClick('haz'));
 labirintus.addEventListener('click', () => OnClick('labirintus'));
 
 function OnClick(filename){
-    prompt.innerHTML = `Feladat: ${prompts[filename]}`
+    prompt.innerHTML = `Feladat: ${prompts[filename]}`;
     vid.src = `./../resources/videos/${filename}.mp4`;
+    code.hidden = true;
+    code = document.querySelector(`code#${filename}`);
+    if(!hide){
+        code.hidden = false;
+    }
+}
+show.addEventListener('click', ShowHide)
+
+function ShowHide(){
+    code.hidden = !hide;
+    if(!hide){
+        show.textContent = 'Kód mutatása';
+    }
+    else{
+        show.textContent = 'Kód elrejtése';
+    }
+    hide = !hide;
 }

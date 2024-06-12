@@ -44,6 +44,364 @@
         </ul>
         <p id="prompt">Feladat: Karesz rajzolja meg <a href="https://molnatt.github.io/logo_mozaik_korongok.png" target="_blank">ezt</a> az ábrát.</p>
         <video src="./../resources/videos/mozaik.mp4" autoplay controls width = 50% id="kareszvideo"></video>
+        <br>
+        <code hidden id="mozaik">
+            <pre>
+void Téglalap(Color szín, double a, double b, bool fill = true)
+{
+    for (int i = 0; i < 2; i++)
+    {
+        Előre(a);
+        Balra(90);
+        Előre(b);
+        Balra(90);
+    }
+    if (fill)
+    {
+        Tollat(fel);
+        Előre(a / 2);
+        Balra(90);
+        Előre(b / 2);
+        Tölt(szín, false);
+        Hátra(b / 2);
+        Jobbra(90);
+        Hátra(a / 2);
+        Tollat(le);
+    }
+}
+void Háromszög(Color szín, double méret, bool fill = true)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        Előre(méret);
+        Jobbra(120);
+    }
+    if (fill)
+    {
+        Tollat(fel);
+        Előre(méret / 2);
+        Jobbra(90);
+        Előre(méret / 2);
+        Tölt(szín, false);
+        Előre(-(méret / 2));
+        Jobbra(-90);
+        Előre(-(méret / 2));
+        Tollat(le);
+    }
+}
+void Hatszög(Color szín, double méret, bool fill = true)
+{
+    for(int i = 0;i < 6; i++)
+    {
+        Előre(méret);
+        Jobbra(60);
+    }
+    if (fill)
+    {
+        Tollat(fel);
+        Előre(méret);
+        Jobbra(90);
+        Előre(méret);
+        Tölt(szín, false);
+        Hátra(méret);
+        Balra(90);
+        Hátra(méret);
+        Tollat(le);
+    }
+}
+void Üveg(Color szín1a, Color szín2a, Color színB, Color színC, double méret)
+{
+    Color HszögSzín = szín1a;
+    for (int i = 0; i < 6; i++)
+    {
+        Előre(méret);
+        Jobbra(60);
+        Téglalap(színB, méret, méret * 2, true);
+        Balra(150);
+        Háromszög(HszögSzín, méret * 2, true);
+        HszögSzín = HszögSzín == szín1a ? szín2a : szín1a;
+        Jobbra(150);
+    }
+    Tollat(fel);
+    Előre(méret);
+    Jobbra(90);
+    Előre(méret);
+    Tölt(színC);
+    Hátra(méret);
+    Balra(90);
+    Hátra(méret);
+    Tollat(le);
+}
+void Sor(Color szín1a, Color szín2a, Color színB, Color színC, double méret, int DB)
+{
+    for (int i = 0; i < DB; i++)
+    {
+        Üveg(szín1a, szín2a, színB, színC, méret);
+        Tollat(fel);
+        Jobbra(120);
+        Előre(méret);
+        Balra(60);
+        Előre(méret);
+        Jobbra(30);
+        Előre(méret * 2);
+        Balra(90);
+        Tollat(le);
+    }
+    Tollat(fel);
+    for (int i = 0; i < DB; i++)
+    {
+        Balra(90);
+        Előre(méret * 2);
+        Balra(30);
+        Előre(méret);
+        Jobbra(60);
+        Előre(méret);
+        Jobbra(60);
+    }
+    Tollat(le);
+}
+void Mozaik(Color szín1a, Color szín2a, Color színB, Color színC, double méret, int szélességDB, int magasságDB)
+{
+    for (int i = 0; i < magasságDB; i++)
+    {
+        Sor(szín1a, szín2a, színB, színC, méret, szélességDB);
+        Tollat(fel);
+        Előre(méret);
+        Jobbra(60);
+        Előre(méret);
+        Balra(30);
+        Előre(méret * 2);
+        Balra(30);
+        if (((i % 2) == 1) & i != magasságDB - 1)
+        {
+            Balra(90);
+            Előre(méret * 2);
+            Balra(30);
+            Előre(méret);
+            Jobbra(60);
+            Előre(méret);
+            Jobbra(60);
+        }
+        Tollat(le);
+    }
+    Tollat(fel);
+    Balra(90);
+    Előre(méret * 2);
+    Balra(90);
+    for (int i = 0; i < magasságDB ; i++)
+    {
+        
+        if (i % 2 == 1)
+        {
+            Balra(60);
+            Előre(méret);
+            Jobbra(90);
+            Előre(méret * 2);
+            Balra(30);
+            Előre(méret);
+        }
+        else
+        {
+            Balra(30);
+            Előre(méret * 2);
+            Jobbra(90);
+            Előre(méret);
+            Balra(60);
+            Előre(méret);
+        }
+    }
+    Jobbra(180);
+    if (magasságDB % 2 == 0)
+    {
+        Balra(120);
+        Előre(méret);
+        Jobbra(60);
+        Előre(méret);
+        Jobbra(60);
+    }
+    Tollat(le);
+}
+            </pre>
+        </code>
+        <code hidden id="fa">
+            <pre>
+void Fa14(int év, double m)
+{
+    if (év > 0)
+    {
+        Előre(m);
+        Balra(60);
+        int ágak = (év == 1 ? 2 : év);
+        for (int i = 0; i < ágak; i++)
+        {
+            Fa14(év - 1, m / 2);
+            Jobbra(i != (ágak - 1) ? 120 / (ágak - 1): 0);
+        }
+        Balra(60);
+        Tollat(fel);
+        Hátra(m);
+        Tollat(le);
+    }
+}
+            </pre>
+        </code>
+        <code hidden id="haz">
+            <pre>
+void Négyszög(int szín, int a, int b)
+{
+    int c = b;
+    for (int i = 0; i < 4; i++)
+    {
+        c = c == a ? b : a;
+        ElőreRakj(c - 1, szín);
+        Balra();
+    }
+}
+void Lépcső(int szín, int db, bool kavics, int irány)
+{
+    if (kavics)
+    {
+        Tegyél_le_egy_kavicsot(szín);
+    }
+    for (int i = 0; i < db - 1; i++)
+    {
+        Előre();
+        Fordulj(irány);
+        Előre();
+        Fordulj(-irány);
+        if (kavics)
+        {
+            Tegyél_le_egy_kavicsot(szín);
+        }
+    }
+}
+void Ív(int szín, int méret, int irány)
+{
+    int párosPáratlan = (méret % 2 == 1? 0 : 1);
+    for (int i = 1; i > -3; i -= 2)
+    {
+        Lépcső(szín, 2, false, i * irány);
+        Lépcső(szín, ((méret / 2) - (i == 1? 0 : 1)) - (((méret / 2) - (i == 1 ? 0 : 1)) % 1) + 1 - (méret % 2 == 1 ? 0 : 1), true, i * irány);
+        Balra();
+        ElőreRakj(párosPáratlan, szín);
+        párosPáratlan = 0;
+        Balra();
+    }
+
+}
+void HázikóAlja(int szín, int szélesség, int magasság, int ablakX, int ablakY, int ablakMagasság, int ablakSzélesség, int ajtóX, int ajtóMagasság, int ajtóSzélesség)
+{
+    Balra();
+    ElőreRakj(ablakX, szín);
+    Jobbra();
+    Előre(ablakY);
+    Négyszög(szín, ablakMagasság, ablakSzélesség);
+    Előre(-ablakY);
+    Balra();
+    ElőreRakj(ajtóX - 1 - ablakX, szín);
+    Előre();
+    Jobbra();
+    Négyszög(szín, ajtóMagasság, ajtóSzélesség);
+    Balra();
+    Előre(ajtóSzélesség - 1);
+    ElőreRakj(szélesség - ajtóX - ajtóSzélesség, szín);
+    Jobbra();
+    ElőreRakj(magasság - 1, szín);
+    Jobbra();
+    ElőreRakj(szélesség - 1, szín);
+    Jobbra();
+    ElőreRakj(magasság - 1, szín);
+    Jobbra(2);
+}
+void Tető(int szín, int perem, int magasság, int szélesség)
+{
+    Előre(magasság - 1);
+    ElőreRakj(perem, szín);
+    Ív(szín, szélesség, balra);
+    Balra();
+    Előre();
+    Balra();
+    ElőreRakj(perem, szín);
+    Előre(magasság);
+    Balra();
+    Előre(szélesség + 1);
+    Balra();
+}
+void Házikó(int alapSzín, int szélesség, int magasság, int ablakX, int ablakY, int ablakMagasság, int ablakSzélesség, int ajtóX, int ajtóMagasság, int ajtóSzélesség, int tetőSzín, int perem)
+{
+    Jobbra();
+    Előre(szélesség - 1);
+    Balra();
+    HázikóAlja(alapSzín, szélesség, magasság, ablakX, ablakY, ablakMagasság, ablakSzélesség, ajtóX, ajtóMagasság, ajtóSzélesség);
+    Tető(tetőSzín, perem, magasság, szélesség - 2);
+}
+void Kerítés(int szín, int db, int szélesség, int magasság, int rúd1, int rúd2)
+{
+    for (int i = 0; i < db; i++)
+    {
+        Előre(rúd1 - 1);
+        Jobbra();
+        ElőreRakj(szélesség, szín);
+        Előre();
+        Jobbra();
+        ElőreRakj(rúd1 - 1, szín);
+        Jobbra(2);
+        Előre(rúd1 - 2);
+        ElőreRakj(magasság - rúd1 + 1, szín);
+        Előre(-(magasság - rúd2));
+        Balra();
+        ElőreRakj(szélesség, szín);
+        Előre(-szélesség);
+        Jobbra();
+        Előre(-(magasság - (magasság - rúd2)) + 1);
+    }
+    Balra();
+    Előre((szélesség + 1) * db);
+    Jobbra();
+}
+void KerítésesHázikó(int alapSzín, int szélesség, int magasság, int ablakX, int ablakY, int ablakMagasság, int ablakSzélesség, int ajtóX, int ajtóMagasság, int ajtóSzélesség, int tetőSzín, int perem, int kerítésSzín, int kerítésDB, int kerítésSzélesség, int kerítésMagasság, int rúd1, int rúd2)
+{
+    Házikó(alapSzín, szélesség, magasság, ablakX, ablakY, ablakMagasság, ablakSzélesség, ajtóX, ajtóMagasság, ajtóSzélesség, tetőSzín, perem);
+    Kerítés(kerítésSzín, kerítésDB, kerítésSzélesség, kerítésMagasság, rúd1, rúd2);
+    Balra();
+    Előre(szélesség - 1);
+    Jobbra();
+}
+            </pre>
+        </code>
+        <code hidden id="labirintus">
+            <pre>
+void Pálya32()
+{
+    if (Van_e_itt_Kavics())
+    {
+        Vegyél_fel_egy_kavicsot();
+    }
+    Tegyél_le_egy_kavicsot(piros);
+    while (Köveinek_száma_ebből(piros) < 1000)
+    {
+        Előre();
+        Jobbra();
+        for (int i = 0; i < 3; i++)
+        {
+            if (Van_e_előttem_fal() | Kilépek_e_a_pályáról())
+            {
+                Balra();
+            }
+            else
+            {
+                break;
+            }
+        }
+        if (Van_e_itt_Kavics())
+        {
+            Vegyél_fel_egy_kavicsot();
+        }
+    }
+}
+            </pre>
+        </code>
+        <button id="show">Kód mutatása</button>
         <script src="./../script.js"></script>
         <br>
         <figure>

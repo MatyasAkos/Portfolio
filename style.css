@@ -58,3 +58,7 @@ button {
 button:active{
     color: #FF0000;
 }
+
+button#show{
+    font-weight: bold;
+}
