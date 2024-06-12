@@ -4,4 +4,4 @@ Ha egy CSS attribútumot csak egy taghez használok (pl van több iframe, de csa
 A fontok is beletartoznak-e a "30 CSS Parancs" feltételbe?
 Ha több CSS fájlom van, akkor a CSS parancsok száma összeadódik (a "30 CSS Parancs" feltétel kapcsán)?
 Ez a JS kód "FElhasználói élményt javító"-nak számít-e?
-Elég- e egy kód tag, ha azt egy JS script változtatni fogja?
+Elég-e egy kód tag, ha azt egy JS script változtatni fogja?
