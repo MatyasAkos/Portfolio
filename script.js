@@ -6,10 +6,10 @@ const haz = document.querySelector('button#haz')
 const labirintus = document.querySelector('button#labirintus')
 
 const prompts = {
-    'mozaik' : 'Feladat: Karesz rajzolja meg <a rel="_blank" href="https://molnatt.github.io/logo_mozaik_korongok.png">ezt</a> az ábrát'
-    /*'fa' : 
-    'haz' : 
-    'labirintus' : */
+    'mozaik' : 'Karesz rajzolja meg <a href="https://molnatt.github.io/logo_mozaik_korongok.png" target="_blank">ezt</a> az ábrát.',
+    'fa' : 'Karesz rajzoljon egy olan fát. amelynek egyre kevesebb ága van felfelé haladva.',
+    'haz' : 'Karesz rakjon ki egy házikót kavicsokból.',
+    'labirintus' : 'Karesz menjen végig a labirintuson és gyűjtse össze a kavicsokat.'
 }
 
 mozaik.addEventListener('click', () => OnClick('mozaik'));
@@ -18,6 +18,6 @@ haz.addEventListener('click', () => OnClick('haz'));
 labirintus.addEventListener('click', () => OnClick('labirintus'));
 
 function OnClick(filename){
-    prompt.innerHTML = prompts[filename]
+    prompt.innerHTML = `Feladat: ${prompts[filename]}`
     vid.src = `./../resources/videos/${filename}.mp4`;
 }
