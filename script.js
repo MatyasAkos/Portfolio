@@ -10,7 +10,7 @@ let hide = true;
 
 const prompts = {
     'mozaik' : 'Karesz rajzolja meg <a href="https://molnatt.github.io/logo_mozaik_korongok.png" target="_blank">ezt</a> az ábrát.',
-    'fa' : 'Karesz rajzoljon egy olan fát. amelynek egyre kevesebb ága van felfelé haladva.',
+    'fa' : 'Karesz rajzoljon egy olyan fát. amelynek egyre kevesebb ága van felfelé haladva.',
     'haz' : 'Karesz rakjon ki egy házikót kavicsokból.',
     'labirintus' : 'Karesz menjen végig a labirintuson és gyűjtse össze a kavicsokat.'
 }
