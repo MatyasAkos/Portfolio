@@ -62,3 +62,16 @@ button:active{
 button#show{
     font-weight: bold;
 }
+
+#invert{
+    filter: invert(90%);
+}
+
+#binarypres{
+    filter: invert(90%);
+    border: 0.15em solid white;
+}
+
+#kareszidle{
+    padding-top: 2em
+}

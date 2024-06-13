@@ -39,3 +39,7 @@ article{
 div p{
     padding-right: 30%;
 }
+
+#inline{
+    display: inline;
+}
