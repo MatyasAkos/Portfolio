@@ -1,7 +1,0 @@
---Az "Utazónapló" elfogadható-e aloldalnak? (Hibák: nincs rendes <nav> bar, külön CSS fájlja van)--
---Gond-e az ha ez nincsen a navbarhoz hozzáadva az Utazónapló?--
---Gond-e, hogy az Utinaplónak külön CSS fájlja van és ha nem, akkor a CSS parancsok száma összeadódik (a "30 CSS Parancs" feltétel kapcsán)
-!!Ha egy CSS attribútumot csak egy taghez használok (pl van több iframe, de csak egyiket szeretném invertálni), akkor muszály-e CSS file-t használni a style attribútum helyett?
---A fontok is beletartoznak-e a "30 CSS Parancs" feltételbe?
---Ez a JS kód "Felhasználói élményt javító"-nak számít-e?
---Gond-e, ha a két code tag tartalma nem látható egyszerre, mind a 4 ugyanazt a célt szolgája, ugyan azon a helyen?
